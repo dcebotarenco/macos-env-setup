@@ -1,0 +1,30 @@
+#!/usr/bin/env/bash
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+brew update
+brew install --cask iterm2
+curl -s "https://get.sdkman.io" | bash
+brew install git
+brew install --cask postman
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+brew install --cask rectangle
+brew install --cask appcleaner
+brew install gitleaks
+brew install jq
+brew install --cask visual-studio-code
+brew install --cask flameshot
+brew install --cask ngrok
+brew install docker
+brew install stretchly
+brew install --cask background-music
+brew install --cask lens
+brew install --cask clipy
+brew install helm
+brew install hyperkit
+brew link minikube
+brew install minikube
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
