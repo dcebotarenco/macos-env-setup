@@ -1,0 +1,60 @@
+[color]
+	ui = auto
+
+[alias]
+#Checkout
+co = checkout
+
+#create a new branch and checkout it
+cob = checkout -b
+
+#delete a branch
+del = branch -D
+
+#list of branches 
+br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+
+#status of the branch
+s = status
+
+#commit
+cm = commit
+
+#undo last commit
+undo = reset HEAD~1 --mixed
+
+#push changes to remote branch
+p = push origin HEAD
+
+#log
+lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+
+#log last commit
+lgl = log -1 HEAD --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+
+#search commit
+se = !git rev-list --all | xargs git grep -F
+
+#reset locally
+res = !git reset --hard
+#reset remote
+reso = !git reset --hard origin/$1
+resr = !git reset --hard origin/release/$1
+
+#list remotes
+rv = remove -v
+
+#diff
+d = diff
+
+#diff in vim
+dv = difftool -t vimdiff -y
+
+#list user configs
+gl = config --global -l
+
+
+[includeIf "gitdir:~/projects/github/"]
+    path = .gitconfig-personal
+[includeIf "gitdir:~/projects/work/"]
+    path = .gitconfig-work
